@@ -1,7 +1,7 @@
 import sqlite3
 import random
 
-text_file = open("C:/Users/Tom/Desktop/OZHEGOV.txt", "r")
+text_file = open("OZHEGOV.txt", "r")
 lines = text_file.readlines()
 text_file.close()
 
