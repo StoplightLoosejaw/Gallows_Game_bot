@@ -2,8 +2,8 @@ import telebot
 from telebot import apihelper
 from database import GallowsEngine
 
-apihelper.proxy = {'http': 'socks5h://116.203.185.50:52395'}
-bot = telebot.TeleBot("983480365:AAHjBkDiW_LvGC9LUgbWwXvurKCaaWTiQvk")
+apihelper.proxy = {proxy}
+bot = telebot.TeleBot(token)
 
 commands_message = "Команды: /toggle_img - вкл/выкл картинки \n /start - новая катка \n /my_stats - статистика" \
                  " \n /info - все команды \n /hint - подсказка"
@@ -96,7 +96,7 @@ def meat(message):
                     m_chars = list(db.get_items('CURRENT_GAME', 'CHARS', message.from_user.id))
                     if m_flag == 1:
                         bot.send_photo(message.from_user.id,
-                                       photo=open('C:/Users/Tom/Desktop/telega/{}.png'.format(m_mistakes), 'rb'))
+                                       photo=open('telegrambot/{}.png'.format(m_mistakes), 'rb'))
                     bot.reply_to(message, "Твое слово\n {} \n Количество оставшихся попыток: {} \n Опробовано {}"
                                  .format(' '.join(m_gallows_status_word), 7 - m_mistakes, ' '.join(list(set(m_chars)))))
                     if 7-m_mistakes == 0:
