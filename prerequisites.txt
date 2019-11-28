@@ -1,0 +1,4 @@
+PySocks 1.6.8
+pyTelegramBotAPI 3.6.6
+requests 2.18.4
+urlib3 1.22
