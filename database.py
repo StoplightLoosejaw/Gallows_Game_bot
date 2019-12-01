@@ -4,10 +4,10 @@ import os
 import psycopg2
 
 
-text_file = open("C:/Users/Tom/Desktop/OZHEGOV.txt", "r")
+text_file = open("dicts/OZHEGOV.txt", "r")
 lines = text_file.readlines()
 text_file.close()
-text_file_eng = open("C:/Users/Tom/PycharmProjects/telegabot/dictionary.csv", "r")
+text_file_eng = open("dicts/dictionary.csv", "r")
 lines_eng = text_file_eng.readlines()
 text_file_eng.close()
 
