@@ -4,10 +4,10 @@ import os
 import psycopg2
 
 
-text_file = open("/app/dicts/OZHEGOV.TXT", "rb")
+text_file = open("/app/dicts/OZHEGOV.TXT", "r")
 lines = text_file.readlines()
 text_file.close()
-text_file_eng = open("/app/dicts/dictionary.csv", "rb")
+text_file_eng = open("/app/dicts/dictionary.csv", "r")
 lines_eng = text_file_eng.readlines()
 text_file_eng.close()
 
@@ -103,12 +103,12 @@ class GallowsEngine:
         while len(gb_gallows_word) < 5:
             index = random.randint(0, len(lines))
             if gb_lang == 0:
-                gb_gallows_word = lines[index].decode().split('|')[0].strip().upper()
-                gb_description = lines[index].decode().split('|')[5].strip().upper()
+                gb_gallows_word = lines[index].split('|')[0].strip().upper()
+                gb_description = lines[index].split('|')[5].strip().upper()
             else:
-                gb_gallows_word = lines_eng[index].decode().split(',')[0].strip().upper()
+                gb_gallows_word = lines_eng[index].split(',')[0].strip().upper()
                 gb_gallows_word = re.sub('"', '', gb_gallows_word)
-                gb_description = lines_eng[index].decode().split(',')[-1].strip().upper()
+                gb_description = lines_eng[index].split(',')[-1].strip().upper()
                 gb_description = re.sub('"', '', gb_description)
         gb_gallows_status_word = '_'*len(gb_gallows_word)
         self.new_game(gb_user_id, gb_gallows_word, gb_description, gb_gallows_status_word)
