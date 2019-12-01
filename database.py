@@ -68,7 +68,7 @@ class GallowsEngine:
         self.cursor.execute(stmt)
         try:
             return self.cursor.fetchone()[0]
-        except TypeError:
+        except:
             return False
 
     def new_player(self, np_user_id):
