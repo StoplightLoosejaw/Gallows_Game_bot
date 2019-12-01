@@ -1,1 +1,1 @@
-bot: python main.py runserver 0.0.0.0:5000$PORT
+worker: python main.py runserver 0.0.0.0:5000$PORT
