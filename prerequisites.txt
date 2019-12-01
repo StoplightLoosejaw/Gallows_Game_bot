@@ -3,4 +3,4 @@ pyTelegramBotAPI
 random
 psycopg2
 re
-ps
+os
