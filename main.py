@@ -107,7 +107,7 @@ def meat(message):
                         m_flag = db.get_items('ALL_USERS', 'IMAGES_FLG', message.from_user.id)
                         if m_flag == 1:
                             bot.send_photo(message.from_user.id,
-                                           photo=open('C:/Users/Tom/Desktop/telega/{}.png'.format(m_mistakes), 'rb'))
+                                           photo=open('pics/{}.png'.format(m_mistakes), 'rb'))
                         bot.reply_to(message, db.text_constants(message.from_user.id)['turn_text'])
                         if 7-m_mistakes == 0:
                             bot.send_message(message.from_user.id, db.text_constants(message.from_user.id)['loss_text'])
