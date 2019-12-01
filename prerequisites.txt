@@ -1,6 +1,0 @@
-telebot
-pyTelegramBotAPI 
-random
-psycopg2
-re
-os
